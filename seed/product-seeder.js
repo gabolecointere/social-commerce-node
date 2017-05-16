@@ -1,10 +1,10 @@
-var Product = require('../models/product');
-//import Product from '../models/product';
-var mongoose = require('mongoose');
-//import mongoose from 'mongoose';
+var Product = require('../models/product') 
+//import Product from '../models/product'
+var mongoose = require('mongoose')
+//import mongoose from 'mongoose'
 
-mongoose.Promise = require('bluebird');
-mongoose.connect('localhost:27017/girlyalpha');
+mongoose.Promise = require('bluebird')
+mongoose.connect('localhost:27017/girlyalpha')
 
 var products = [
   new Product({
@@ -43,18 +43,18 @@ new Product({
   description: 'Just a random description for a swimsuit',
   price: 10
 })
-];
+]
 
-var done = 0;
-for (let i = 0; i < products.length; i++) {
+var done = 0
+for (let i = 0  i < products.length  i++) {
   products[i].save(function(err, result){
-    done++;
+    done++
     if (done === products.length){
-    exit();
+    exit()
     }
-  });
+  })
 }
 
 const exit = () => {
-  mongoose.disconnect();
+  mongoose.disconnect()
 }
